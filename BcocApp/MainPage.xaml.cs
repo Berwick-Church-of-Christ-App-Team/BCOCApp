@@ -16,6 +16,26 @@ namespace BcocApp
         public MainPage()
         {
             InitializeComponent();
+            webView.Source = "https://www.berwickchurch.org.au/";
+        }
+        async void OnBackButtonClicked(object sender, EventArgs e)
+        {
+            if (webView.CanGoBack)
+            {
+                webView.GoBack();
+            }
+            else
+            {
+                await Navigation.PopAsync();
+            }
+        }
+
+        void OnForwardButtonClicked(object sender, EventArgs e)
+        {
+            if (webView.CanGoForward)
+            {
+                webView.GoForward();
+            }
         }
     }
 }
