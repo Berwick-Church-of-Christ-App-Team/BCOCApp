@@ -3,8 +3,15 @@
     <StackLayout>
         <Frame>
             <StackLayout Orientation="Horizontal" Margin="5">
-                <Button Text="Back" HorizontalOptions="StartAndExpand" Clicked="OnBackButtonClicked" />
-                <Button Text="Forward" HorizontalOptions="EndAndExpand" Clicked="OnForwardButtonClicked" />
+                <Button Text="Back" HorizontalOptions="Start" Clicked="OnBackButtonClicked" />
+                <Label HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Text="Berwick Church of Christ">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Chalkduster" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Button Text="Forward" HorizontalOptions="End" Clicked="OnForwardButtonClicked" />
             </StackLayout>
         </Frame>
         <WebView x:Name="webView" WidthRequest="1000" HeightRequest="1000"/>
